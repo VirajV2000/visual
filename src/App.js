@@ -1,24 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import BarChart from './component/BarChart';
+import Navbar from './component/Navbar';
 
 function App() {
+  const data=[5,15,20,25,30,35,55,80,69,58];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar />
+      <BarChart data={data}/>
+    </>
   );
 }
 
