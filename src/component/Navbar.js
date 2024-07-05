@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Navbar() {
+const Navbar = ({onClick}) => {
+    console.log("onclick type:",typeof onClick);
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
@@ -14,7 +15,7 @@ function Navbar() {
           <a className="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Link</a>
+          <a className="nav-link" href="#"onClick={onClick}>Randomize</a>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

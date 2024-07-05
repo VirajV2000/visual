@@ -2,12 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import BarChart from './component/BarChart';
 import Navbar from './component/Navbar';
+import { generateRandomArray } from './functions/generateRandomArray';
+import { useState } from 'react';
 
 function App() {
-  const data=[5,15,20,25,30,35,55,80,69,58];
+  const [data, setData] = useState(generateRandomArray(10, 10, 150));
+
+  const randomizeArray = () => {
+    setData(generateRandomArray(10, 10, 150));
+  };
   return (
     <>
-    <Navbar />
+    <Navbar onClick={randomizeArray}/>
       <BarChart data={data}/>
     </>
   );
