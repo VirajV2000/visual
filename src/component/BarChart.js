@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DataContext } from '../DataContext';
 
-const BarChart = ({ data }) => {
+const BarChart = () => {
+  const { data} = useContext(DataContext);
+
   return (
     <div className="container">
       <div className="bar-chart my-5">
@@ -15,7 +18,7 @@ const BarChart = ({ data }) => {
             
           }}
         >
-          {value}
+          {value} 
         </div>
       ))}
     </div>
