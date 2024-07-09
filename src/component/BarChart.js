@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { DataContext } from '../DataContext';
 
 const BarChart = () => {
-  const { data} = useContext(DataContext);
+  const { data,comparing} = useContext(DataContext);
 
   return (
     <div className="container">
@@ -15,7 +15,7 @@ const BarChart = () => {
           style={{
             height: `${value*5}px`,
             width:'100px',
-            
+            backgroundColor: comparing.includes(index) ? 'red' : '#3498db',
           }}
         >
           {value} 

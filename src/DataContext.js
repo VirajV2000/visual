@@ -16,6 +16,15 @@ export const DataProvider = ({ children }) => {
     setData(generateRandomArray(10, 10, 150));
     setComparing([]);
   };
+  const setBar=(results)=>{
+    results.forEach((step, index) => {
+      setTimeout(() => {
+        setData(step.array);
+        setComparing(step.comparing);
+        console.log(step.array);
+      }, index * 300); // adjust speed as needed
+    });
+  }
 
   const sortArray = () => {
     console.log(method);
@@ -23,12 +32,14 @@ export const DataProvider = ({ children }) => {
       console.log("inside bubble sort array type")
       var results=BubbleSort([...data],data.length);
       console.log(results);
-      for (let i = 0; i < results.length; i++) {
-        setTimeout(()=>{
-          setData(results[i]);
-          console.log(results[i]);
-        },i*1000);
-      }
+      // results.forEach((step, index) => {
+      //   setTimeout(() => {
+      //     setData(step.array);
+      //     setComparing(step.comparing);
+      //     console.log(step.array);
+      //   }, index * 300); // adjust speed as needed
+      // });
+      setBar(results);
       // setData(sortedarray);
     }
     else{
@@ -37,7 +48,7 @@ export const DataProvider = ({ children }) => {
   };
 
   return (
-    <DataContext.Provider value={{ data,method ,randomizeArray, sortArray ,setData,setMethod}}>
+    <DataContext.Provider value={{ data,method ,randomizeArray, sortArray ,setData,setMethod,comparing,setComparing}}>
       {children}
     </DataContext.Provider>
   );
