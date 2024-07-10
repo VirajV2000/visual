@@ -11,8 +11,13 @@
   text-align: center;
   color: white;
   font-size: 14px;
+  transition: transform 0.5s;
+
 }
 .bar-test{
   background-color: #db7134;
 
+}
+.swapping {
+  transform: translateY(50px); /* Adjust this value as needed */
 }

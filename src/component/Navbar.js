@@ -36,12 +36,14 @@ const Navbar = () => {
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Select algorithm
+            {method}
           </a>
           <ul className="dropdown-menu">
             <li><a className="dropdown-item" href="#" onClick={()=>{handleAlgorithmChange("BubbleSort");console.log(method);}}>Bubble sort</a></li>
             <li><a className="dropdown-item" href="#" onClick={()=>{handleAlgorithmChange("InsertionSort");console.log(method);}}>Insertion Sort</a></li>
-            <li><hr className="dropdown-divider"/></li>
+            <li><a className="dropdown-item" href="#" onClick={()=>{handleAlgorithmChange("SelectionSort");console.log(method);}}>Selection Sort</a></li>
+
+            <li><a className="dropdown-divider"onClick={()=>{handleAlgorithmChange("SelectionSort");console.log(method);}}>Selection Sort</a> </li>
             <li><a className="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>

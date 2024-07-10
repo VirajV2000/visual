@@ -11,8 +11,8 @@ const BubbleSort = (arr, length) => {
         arr[j + 1] = temp;
       }
       results.push({
-        array: JSON.parse(JSON.stringify(arr)),
-        comparing: [j, j + 1],
+        array: JSON.parse(JSON.stringify(arr)),   
+        comparing: [j, j + 1],     //for red color bar
       });
     }
     
