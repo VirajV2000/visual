@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { generateRandomArray } from './functions/generateRandomArray';
 import BubbleSort from './algorithms/BubbleSort';
+import InsertionSort from './algorithms/InsertionSort';
 
 // Create the context
 export const DataContext = createContext();
@@ -32,15 +33,13 @@ export const DataProvider = ({ children }) => {
       console.log("inside bubble sort array type")
       var results=BubbleSort([...data],data.length);
       console.log(results);
-      // results.forEach((step, index) => {
-      //   setTimeout(() => {
-      //     setData(step.array);
-      //     setComparing(step.comparing);
-      //     console.log(step.array);
-      //   }, index * 300); // adjust speed as needed
-      // });
+      
       setBar(results);
       // setData(sortedarray);
+    }else if(method=="InsertionSort"){
+        var results=InsertionSort([...data],data.length);
+        console.log(results.array);
+        setBar(results);
     }
     else{
       alert("Select an algorithm");

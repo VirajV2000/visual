@@ -40,7 +40,7 @@ const Navbar = () => {
           </a>
           <ul className="dropdown-menu">
             <li><a className="dropdown-item" href="#" onClick={()=>{handleAlgorithmChange("BubbleSort");console.log(method);}}>Bubble sort</a></li>
-            <li><a className="dropdown-item" href="#">Another action</a></li>
+            <li><a className="dropdown-item" href="#" onClick={()=>{handleAlgorithmChange("InsertionSort");console.log(method);}}>Insertion Sort</a></li>
             <li><hr className="dropdown-divider"/></li>
             <li><a className="dropdown-item" href="#">Something else here</a></li>
           </ul>
