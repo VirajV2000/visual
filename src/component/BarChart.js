@@ -4,7 +4,7 @@ import { DataContext } from '../DataContext';
 const BarChart = () => {
   const { data,comparing} = useContext(DataContext);
   const [swappingIndices, setSwappingIndices] = useState([]);
-
+ 
   useEffect(() => {
     if (comparing.length > 0) {
       setSwappingIndices(comparing);
@@ -13,7 +13,7 @@ const BarChart = () => {
       }, 500); // Duration of the swap animation
     }
   }, [comparing]);
-
+  
   return (
     <div className="container">
       <div className="bar-chart my-5">

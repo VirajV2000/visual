@@ -9,9 +9,13 @@ const SelectionSort = (arr,length) => {
 
             results.push({
                 array: JSON.parse(JSON.stringify(arr)),   
-                 comparing: [],     //for red color bar
+                 comparing: [last],     //for red color bar
               });
         } 
+        results.push({
+            array: JSON.parse(JSON.stringify(arr)),   
+             comparing: [],     //for red color bar
+          });
         return results;   
 }
 const swap=(arr,last,max)=>{

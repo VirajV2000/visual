@@ -3,6 +3,7 @@ import { generateRandomArray } from './functions/generateRandomArray';
 import BubbleSort from './algorithms/BubbleSort';
 import InsertionSort from './algorithms/InsertionSort';
 import SelectionSort from './algorithms/SelectionSort';
+import QuickSort from './algorithms/QuickSort';
 
 // Create the context
 export const DataContext = createContext();
@@ -24,7 +25,7 @@ export const DataProvider = ({ children }) => {
         setData(step.array);
         setComparing(step.comparing);
         console.log(step.array);
-      }, index * 300); // adjust speed as needed
+      }, index * 1000); // adjust speed as needed
     });
   }
 
@@ -45,6 +46,11 @@ export const DataProvider = ({ children }) => {
       console.log("inside bubble sort array type")
       var results=SelectionSort([...data],data.length);
 
+      setBar(results);
+    }else if(method=="QuickSort"){
+      console.log("inside quick sort array type")
+      var results=QuickSort([...data],data.length);
+      console.log(results);
       setBar(results);
     }
     else{

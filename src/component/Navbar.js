@@ -42,8 +42,8 @@ const Navbar = () => {
             <li><a className="dropdown-item" href="#" onClick={()=>{handleAlgorithmChange("BubbleSort");console.log(method);}}>Bubble sort</a></li>
             <li><a className="dropdown-item" href="#" onClick={()=>{handleAlgorithmChange("InsertionSort");console.log(method);}}>Insertion Sort</a></li>
             <li><a className="dropdown-item" href="#" onClick={()=>{handleAlgorithmChange("SelectionSort");console.log(method);}}>Selection Sort</a></li>
+            <li><a className="dropdown-item" href="#" onClick={()=>{handleAlgorithmChange("QuickSort");console.log(method);}}>Quick Sort</a></li>
 
-            <li><a className="dropdown-divider"onClick={()=>{handleAlgorithmChange("SelectionSort");console.log(method);}}>Selection Sort</a> </li>
             <li><a className="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
