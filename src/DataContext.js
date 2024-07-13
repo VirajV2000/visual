@@ -4,6 +4,7 @@ import BubbleSort from './algorithms/BubbleSort';
 import InsertionSort from './algorithms/InsertionSort';
 import SelectionSort from './algorithms/SelectionSort';
 import QuickSort from './algorithms/QuickSort';
+import MeregSort from './algorithms/MeregSort';
 
 // Create the context
 export const DataContext = createContext();
@@ -52,6 +53,11 @@ export const DataProvider = ({ children }) => {
       var results=QuickSort([...data],data.length);
       console.log(results);
       setBar(results);
+    }else if(method=="MergeSort"){
+      console.log("inside quick sort array type")
+      var results=MeregSort([...data],data.length);
+      // console.log(results);
+      // setBar(results);
     }
     else{
       alert("Select an algorithm");
