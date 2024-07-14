@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../DataContext';
+import Navbar from './Navbar';
 
 const BarChart = () => {
   const { data,comparing} = useContext(DataContext);
@@ -15,6 +16,8 @@ const BarChart = () => {
   }, [comparing]);
   
   return (
+    <>
+    <Navbar/>
     <div className="container">
       <div className="bar-chart my-5">
         
@@ -33,7 +36,7 @@ const BarChart = () => {
       ))}
     </div>
     </div>
-    
+    </>
   );
 };
 

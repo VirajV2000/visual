@@ -5,6 +5,8 @@ import Navbar from './component/Navbar';
 import { generateRandomArray } from './functions/generateRandomArray';
 import { useState } from 'react';
 import { DataProvider } from './DataContext';
+import { BrowserRouter as Router, Route, Switch, Link, Routes } from 'react-router-dom';
+import LandingPage from './component/LandingPage';
 
 function App() {
   // const [data, setData] = useState(generateRandomArray(10, 10, 150));
@@ -14,8 +16,15 @@ function App() {
   // };
   return (
     <DataProvider>
-    <Navbar />
-      <BarChart />
+      <Router>
+        {/* <Navbar /> */}
+        <Routes>
+          <Route path='/' exact element={<LandingPage/>}/>
+          <Route path="/sort" element={<BarChart/>}/>
+          <Route path="/search" element={BarChart}/>
+          </Routes>
+      </Router>
+   
     </DataProvider>
   );
 }
