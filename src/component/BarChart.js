@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../DataContext';
 import Navbar from './Navbar';
+import HomeNav from './HomeNav';
 
-const BarChart = () => {
+const BarChart = (props) => {
   const { data,comparing} = useContext(DataContext);
   const [swappingIndices, setSwappingIndices] = useState([]);
  
@@ -11,20 +12,22 @@ const BarChart = () => {
       setSwappingIndices(comparing);
       setTimeout(() => {
         setSwappingIndices([]);
-      }, 500); // Duration of the swap animation
+      }, 500); 
     }
   }, [comparing]);
   
   return (
     <>
-    <Navbar/>
+    {props.type=="sort" && <Navbar/>}
+    {props.type=="search" && <HomeNav type="search"/>}
+
     <div className="container">
       <div className="bar-chart my-5">
         
       {data.map((value, index) => (
         <div
           key={index}
-          className={`bar ${swappingIndices.includes(index) ? 'swapping' : ''}`}
+          className={`bar`}
           style={{
             height: `${value*5}px`,
             width:'100px',

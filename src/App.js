@@ -20,8 +20,8 @@ function App() {
         {/* <Navbar /> */}
         <Routes>
           <Route path='/' exact element={<LandingPage/>}/>
-          <Route path="/sort" element={<BarChart/>}/>
-          <Route path="/search" element={BarChart}/>
+          <Route path="/sort" element={<BarChart type="sort"/>}/>
+          <Route path="/search" element={<BarChart type="search"/>}/>
           </Routes>
       </Router>
    
