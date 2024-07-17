@@ -18,10 +18,10 @@ const BarChart = (props) => {
   }, [comparing]);
   
   useEffect(() => {
-    if (foundIndex !== null && comparing.length == 0) {
+    if (foundIndex !== undefined && comparing.length == 0) {
       setSearchCompleted(true);
     }
-  }, [foundIndex, comparing]);
+  }, [foundIndex, comparing,data]);
   return (
     <>
       {props.type == "sort" && <Navbar />}
@@ -66,6 +66,7 @@ const BarChart = (props) => {
             </div>
           ))}
         </div>
+        {/* {console.log(searchCompleted,foundIndex)} */}
         {props.type == "search" && searchCompleted && foundIndex == null && (
           <div className="alert alert-danger mt-3" role="alert">
             Element  not found.

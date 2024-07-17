@@ -6,6 +6,7 @@ import SelectionSort from './algorithms/SelectionSort';
 import QuickSort from './algorithms/QuickSort';
 import MeregSort from './algorithms/MergeSort';
 import LinearSearch from './algorithms/LinearSearch';
+import BinarySearch from './algorithms/BinarySearch';
 
 // Create the context
 export const DataContext = createContext();
@@ -15,7 +16,7 @@ export const DataProvider = ({ children }) => {
   const [data, setData] = useState(generateRandomArray(10, 10, 150));
   const [method,setMethod]=useState("Select Algorithm");
   const [comparing, setComparing] = useState([]);
-  const [foundIndex,setfoundindex]=useState(null);
+  const [foundIndex,setfoundindex]=useState();
 
   const randomizeArray = (method) => {
     setData(generateRandomArray(10, 10, 150));
@@ -30,6 +31,8 @@ export const DataProvider = ({ children }) => {
         setfoundindex(step.found);
         console.log(step.array);
         console.log(foundIndex);
+        
+
       }, index * 1000); // adjust speed as needed
     });
   }
@@ -75,7 +78,20 @@ const search=(target)=>{
     var results=LinearSearch([...data],data.length,target)
     console.log(results);
     setBar(results);
-  }else{
+  }else if(method=="BinarySearch"){
+    console.log("inside binary search");
+    console.log(target);
+    // var results=MeregSort([...data],data.length);
+    
+    // await setBar(results);
+    console.log("data is ",data);
+    console.log("hiii");
+    // const sortedData = results[results.length - 1].array;
+
+    var results= BinarySearch([...data],data.length,target)
+    console.log(results);
+    setBar(results);
+  } else {
     alert("Select an algorithm");
 
   }

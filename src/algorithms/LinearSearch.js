@@ -24,7 +24,7 @@ const LinearSearch = (arr,length,target) => {
   if(!found){results.push({
     array: JSON.parse(JSON.stringify(arr)),
     comparing: [],
-    
+    found:null  , 
 });}
   return results;
 }
