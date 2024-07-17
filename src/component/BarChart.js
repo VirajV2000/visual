@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import HomeNav from './HomeNav';
 
 const BarChart = (props) => {
-  const { data,comparing} = useContext(DataContext);
+  const { data,comparing,foundIndex} = useContext(DataContext);
   const [swappingIndices, setSwappingIndices] = useState([]);
  
   useEffect(() => {
@@ -31,7 +31,7 @@ const BarChart = (props) => {
           style={{
             height: `${value*5}px`,
             width:'100px',
-            backgroundColor: comparing.includes(index) ? 'red' : '#3498db',
+            backgroundColor: foundIndex === index ? 'green' :(comparing.includes(index) ? 'red' : '#3498db'),
           }}
         >
           {value} 

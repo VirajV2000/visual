@@ -3,8 +3,17 @@ import { Link } from 'react-router-dom'
 import { DataContext } from '../DataContext';
 
 const HomeNav = (props) => {
-  const { randomizeArray,method ,setMethod} = useContext(DataContext);
+  const { randomizeArray,method ,setMethod,search} = useContext(DataContext);
+  const handleAlgorithmChange = (algorithm) => {
+    setMethod(algorithm);
+    console.log("Selected Algorithm:", algorithm);
+  };
+  const handleSearchClick = (event) => {
+    event.preventDefault();
 
+    console.log("clicked")
+    search();
+  };
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
@@ -17,36 +26,39 @@ const HomeNav = (props) => {
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
-        {props.type!=="search" &&
+        
         <li className="nav-item">
           <Link className="nav-link" to="/search">Search</Link>
-        </li>}
-        {props.type=="sort" &&
+        </li>
+        
         <li className="nav-item">
           <Link className="nav-link" to="/sort">Sort</Link>
-        </li>}
+        </li>
+        {(props.type=="sort" || props.type=="search") &&
         <li className="nav-item">
           <Link className="nav-link" to="#"onClick={randomizeArray}>Randomize</Link>
-        </li>
+        </li>}
+        {(props.type!=undefined || props.type=="search" )&& 
         <li className="nav-item dropdown">
           <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            select 
+            {method} 
           </Link>
-          {props.type=="search" && 
+          
           <ul className="dropdown-menu">
-            <li><Link className="dropdown-item" to="#" >Linear Search</Link></li>
-            <li><Link className="dropdown-item" to="#" >Binear Search </Link></li>
+            <li><Link className="dropdown-item" to="#" onClick={()=>{handleAlgorithmChange("LinearSearch");console.log(method);}}>Linear Search</Link></li>
+            <li><Link className="dropdown-item" to="#"  onClick={()=>{handleAlgorithmChange("BinarySearch");console.log(method);}}>Binear Search </Link></li>
             {/* <li><Link className="dropdown-item" to="#">Something else here</Link></li> */}
-          </ul>}
-        </li>
+          </ul>
+        </li>}
         <li className="nav-item">
           <Link className="nav-link disabled" aria-disabled="true">Disabled</Link>
         </li>
       </ul>
+      {props.type==undefined || props.type=="search" &&
       <form className="d-flex" role="search">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success"  >Sort</button>
-      </form>
+        <button className="btn btn-outline-success"  onClick={handleSearchClick}>Search</button>
+      </form>}
     </div>
   </div>
 </nav>
