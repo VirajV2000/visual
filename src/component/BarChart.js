@@ -38,9 +38,10 @@ const BarChart = (props) => {
         >
           {value} 
         </div>
-        <div className="index-value mt-2">
+          {props.type=="search" && 
+  <div className="index-value mt-2">
         <span className="badge " style={{backgroundColor: foundIndex === index ? 'green':'#007bff',}}>{index}</span>
-      </div>
+      </div>}
       </div>
         
       ))}
