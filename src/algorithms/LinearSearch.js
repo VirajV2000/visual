@@ -11,7 +11,7 @@ const LinearSearch = (arr,length,target) => {
         results.push({
             array: JSON.parse(JSON.stringify(arr)),
             comparing: [i],
-            found:[i]
+            found:i,
         });
         break;
     }    

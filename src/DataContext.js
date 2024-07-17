@@ -28,6 +28,7 @@ export const DataProvider = ({ children }) => {
         setComparing(step.comparing);
         setfoundindex(step.found);
         console.log(step.array);
+        console.log(foundIndex);
       }, index * 1000); // adjust speed as needed
     });
   }
@@ -69,7 +70,9 @@ const search=()=>{
   console.log(method);
   if(method=="LinearSearch"){
     console.log("inside linear search");
-    var results=LinearSearch([...data],data.length,target)
+    var results=LinearSearch([...data],data.length,53)
+    console.log(results);
+    setBar(results);
   }
 }
   return (

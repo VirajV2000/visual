@@ -25,6 +25,8 @@ const BarChart = (props) => {
       <div className="bar-chart my-5">
         
       {data.map((value, index) => (
+                    <div key={index} className="d-flex flex-column align-items-center mx-2">
+
         <div
           key={index}
           className={`bar`}
@@ -36,6 +38,11 @@ const BarChart = (props) => {
         >
           {value} 
         </div>
+        <div className="index-value mt-2">
+        <span className="badge " style={{backgroundColor: foundIndex === index ? 'green':'#007bff',}}>{index}</span>
+      </div>
+      </div>
+        
       ))}
     </div>
     </div>
