@@ -20,6 +20,7 @@ export const DataProvider = ({ children }) => {
   const randomizeArray = (method) => {
     setData(generateRandomArray(10, 10, 150));
     setComparing([]);
+    setfoundindex();
   };
   const setBar=(results)=>{
     results.forEach((step, index) => {
@@ -66,13 +67,17 @@ export const DataProvider = ({ children }) => {
       alert("Select an algorithm");
     }
   };
-const search=()=>{
+const search=(target)=>{
   console.log(method);
   if(method=="LinearSearch"){
     console.log("inside linear search");
-    var results=LinearSearch([...data],data.length,53)
+    console.log(target)
+    var results=LinearSearch([...data],data.length,target)
     console.log(results);
     setBar(results);
+  }else{
+    alert("Select an algorithm");
+
   }
 }
   return (

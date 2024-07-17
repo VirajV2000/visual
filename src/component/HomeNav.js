@@ -11,8 +11,14 @@ const HomeNav = (props) => {
   const handleSearchClick = (event) => {
     event.preventDefault();
 
-    console.log("clicked")
-    search();
+    const target=document.getElementById('input').value;
+    if(target){
+      console.log("clicked")
+      search(target);
+    }else{
+      alert("Enter a value to search");
+    }
+    
   };
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -56,7 +62,7 @@ const HomeNav = (props) => {
       </ul>
       {props.type==undefined || props.type=="search" &&
       <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <input className="form-control me-2" id="input" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success"  onClick={handleSearchClick}>Search</button>
       </form>}
     </div>
