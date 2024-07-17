@@ -15,7 +15,7 @@ export const DataProvider = ({ children }) => {
   const [data, setData] = useState(generateRandomArray(10, 10, 150));
   const [method,setMethod]=useState("Select Algorithm");
   const [comparing, setComparing] = useState([]);
-  const [foundIndex,setfoundindex]=useState(-1);
+  const [foundIndex,setfoundindex]=useState(null);
 
   const randomizeArray = (method) => {
     setData(generateRandomArray(10, 10, 150));
