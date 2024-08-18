@@ -18,11 +18,14 @@ export const DataProvider = ({ children }) => {
   const [comparing, setComparing] = useState([]);
   const [foundIndex,setfoundindex]=useState();
 
+  //to randomize the array 
   const randomizeArray = (method) => {
     setData(generateRandomArray(10, 10, 150));
     setComparing([]);
     setfoundindex();
   };
+
+  //setting data for displaying bars
   const setBar=(results)=>{
     results.forEach((step, index) => {
       setTimeout(() => {
@@ -36,6 +39,8 @@ export const DataProvider = ({ children }) => {
       }, index * 1000); // adjust speed as needed
     });
   }
+
+  //sorting algorithms
 
   const sortArray = () => {
     console.log(method);
@@ -70,7 +75,10 @@ export const DataProvider = ({ children }) => {
       alert("Select an algorithm");
     }
   };
-const search=(target)=>{
+
+//searching algorithms
+
+  const search=(target)=>{
   console.log(method);
   if(method=="LinearSearch"){
     console.log("inside linear search");

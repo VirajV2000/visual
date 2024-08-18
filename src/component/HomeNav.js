@@ -4,10 +4,14 @@ import { DataContext } from '../DataContext';
 
 const HomeNav = (props) => {
   const { randomizeArray,method ,setMethod,search} = useContext(DataContext);
+  
+  //handle algorithm change
   const handleAlgorithmChange = (algorithm) => {
     setMethod(algorithm);
     console.log("Selected Algorithm:", algorithm);
   };
+
+
   const handleSearchClick = (event) => {
     event.preventDefault();
 
@@ -18,7 +22,6 @@ const HomeNav = (props) => {
     }else{
       alert("Enter a value to search");
     }
-    
   };
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
